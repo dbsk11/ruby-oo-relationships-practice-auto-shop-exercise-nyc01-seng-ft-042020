@@ -15,7 +15,7 @@ class CarOwner
 
   def cars
     Car.all.select do |car|
-      car.car_owner == self
+      car.owner == self
     end
   end
 
@@ -28,7 +28,9 @@ class CarOwner
   def self.average_number_of_cars
     total_owners = self.all.count
     total_cars = 0
+    binding.pry
     self.all.each do |car_owner|
+      binding.pry
       total_cars = total_cars + car_owner.cars.count
     end
     total_cars/total_owners
