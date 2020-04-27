@@ -20,12 +20,12 @@ class Car
   def self.classification
     Car.all.map do |car|
       car.classification
-    end
+    end.uniq
   end
 
   def self.find_mechanics(classification)
-    Car.all.select do |car|
-      car.mechanic.specialty == classification
+    Mechanic.all.select do |car|
+      car.classification == classification
     end
   end
 
