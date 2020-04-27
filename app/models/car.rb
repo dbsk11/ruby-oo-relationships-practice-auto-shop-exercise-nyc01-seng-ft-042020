@@ -4,8 +4,8 @@ class Car
 
   @@all = []
 
-  def initialize(owner, make, model, classification, mechanic)
-    @owner = owner
+  def initialize(carOwner, make, model, classification, mechanic)
+    @car_owner = carOwner
     @make = make
     @model = model
     @mechanic = mechanic

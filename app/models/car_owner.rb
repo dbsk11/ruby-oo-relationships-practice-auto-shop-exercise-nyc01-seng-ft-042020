@@ -15,14 +15,14 @@ class CarOwner
 
   def cars
     Car.all.select do |car|
-      car.owner == self
+      car.car_owner == self
     end
   end
 
   def mechanics
     cars.map do |car|
-      car.mechanic 
-    end
+      car.mechanic
+    end.uniq
   end
 
   def self.average_number_of_cars
