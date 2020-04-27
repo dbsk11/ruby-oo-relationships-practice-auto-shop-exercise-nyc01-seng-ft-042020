@@ -26,7 +26,12 @@ class CarOwner
   end
 
   def self.average_number_of_cars
-    Car.all.count/CarOwner.all.count
+    total_owners = self.all.count
+    total_cars = 0
+    self.all.each do |car_owner|
+      total_cars = total_cars + car_owner.cars.count
+    end
+    total_cars/total_owners
   end
 
 end
