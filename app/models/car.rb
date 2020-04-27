@@ -25,7 +25,7 @@ class Car
 
   def self.find_mechanics(classification)
     Mechanic.all.select do |car|
-      car.classification == classification
+      car.specialty == classification
     end
   end
 
